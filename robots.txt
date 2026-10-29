@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://almeida-joaomarcos.github.io/tdee-web/sitemap.xml

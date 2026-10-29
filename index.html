@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caloria Certa — Calculadora de TDEE e macros</title>
+  <meta name="description" content="Descubra quantas calorias você precisa por dia. Calculadora gratuita de TDEE (gasto calórico diário), TMB e macros com base na fórmula Mifflin-St Jeor." />
+  <meta name="theme-color" content="#0f7a5a" />
+  <link rel="canonical" href="https://almeida-joaomarcos.github.io/tdee-web/" />
+
+  <!-- Open Graph / redes sociais -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Caloria Certa — Calculadora de TDEE e macros" />
+  <meta property="og:description" content="Quantas calorias você precisa por dia? Calcule seu gasto calórico diário, TMB e macros em menos de 1 minuto." />
+  <meta property="og:url" content="https://almeida-joaomarcos.github.io/tdee-web/" />
+  <meta property="og:image" content="https://almeida-joaomarcos.github.io/tdee-web/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Caloria Certa",
+    "url": "https://almeida-joaomarcos.github.io/tdee-web/",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "pt-BR",
+    "description": "Calculadora gratuita de TDEE, TMB e macronutrientes baseada na fórmula Mifflin-St Jeor.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#calculadora">Pular para a calculadora</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Caloria Certa — início">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 3c1.6 4.3-.3 6.6-2.2 8.8-2 2.3-4.2 4.7-4.2 8.6C9.6 25.8 12.5 29 16 29s6.4-3.2 6.4-8.6c0-2.6-1.2-4.6-2.6-6.4-.5 1.6-1.4 2.6-2.6 3.1.6-5.2-1.6-9.6-1.2-14.1Z" fill="currentColor"/>
+          <path d="M16 29c-2.4 0-4.3-2.1-4.3-5 0-2.2 1.1-3.6 2.3-5.1.9-1.1 1.8-2.2 2.2-3.7.7 1.6 1.6 2.8 2.5 4 1.2 1.5 2.2 2.9 2.2 4.8 0 2.9-1.9 5-4.9 5Z" fill="#fff" opacity=".9"/>
+        </svg>
+        <span>Caloria <strong>Certa</strong></span>
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#calculadora">Calculadora</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#duvidas">Dúvidas</a>
+        <button class="btn btn-ghost btn-sm" data-open-pro>Plano Pro</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="dot"></span> Baseado na fórmula Mifflin-St Jeor</p>
+          <h1>Quantas calorias você <em>realmente</em> precisa por dia?</h1>
+          <p class="lead">
+            Descubra seu gasto calórico diário (TDEE), sua taxa metabólica basal e a divisão ideal de
+            proteínas, gorduras e carboidratos — de graça, sem cadastro.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#calculadora">Calcular agora</a>
+            <a class="btn btn-quiet" href="#como-funciona">Entender o cálculo</a>
+          </div>
+          <ul class="trust-list">
+            <li>Resultado em 1 minuto</li>
+            <li>Dados ficam no seu navegador</li>
+            <li>Grátis, sem login</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="preview-card">
+            <p class="preview-label">Sua meta diária</p>
+            <p class="preview-number">2.184 <span>kcal</span></p>
+            <div class="preview-bars">
+              <div><span>Proteína</span><i style="--w:82%"></i></div>
+              <div><span>Gordura</span><i style="--w:58%"></i></div>
+              <div><span>Carboidrato</span><i style="--w:66%"></i></div>
+            </div>
+            <p class="preview-foot">Emagrecimento · déficit de 500 kcal</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICIDADE -->
+    <div class="container">
+      <aside class="ad-slot" aria-label="Publicidade">
+        <span>Publicidade</span>
+        <!-- Insira aqui o bloco do Google AdSense -->
+      </aside>
+    </div>
+
+    <!-- CALCULADORA -->
+    <section id="calculadora" class="section calc-section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Sua calculadora</h2>
+          <p>Preencha os dados abaixo. Você pode ajustar proteína e gordura em “Ajustes avançados”.</p>
+        </div>
+
+        <div class="calc-grid">
+          <!-- FORM -->
+          <form id="tdee-form" class="card form-card" novalidate>
+            <fieldset class="field">
+              <legend>Sexo biológico</legend>
+              <div class="segmented" role="radiogroup" aria-label="Sexo biológico">
+                <label><input type="radio" name="sexo" value="masc" checked /><span>Masculino</span></label>
+                <label><input type="radio" name="sexo" value="fem" /><span>Feminino</span></label>
+                <label><input type="radio" name="sexo" value="outro" /><span>Prefiro não informar</span></label>
+              </div>
+              <p class="hint">Usado apenas na fórmula metabólica.</p>
+            </fieldset>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="idade">Idade</label>
+                <div class="input-wrap">
+                  <input id="idade" name="idade" type="number" inputmode="numeric" min="14" max="100" step="1" placeholder="28" required />
+                  <span class="unit">anos</span>
+                </div>
+                <p class="error" data-error-for="idade"></p>
+              </div>
+              <div class="field">
+                <label for="peso">Peso</label>
+                <div class="input-wrap">
+                  <input id="peso" name="peso" type="text" inputmode="decimal" placeholder="72,5" required />
+                  <span class="unit">kg</span>
+                </div>
+                <p class="error" data-error-for="peso"></p>
+              </div>
+              <div class="field">
+                <label for="altura">Altura</label>
+                <div class="input-wrap">
+                  <input id="altura" name="altura" type="number" inputmode="numeric" min="120" max="230" step="1" placeholder="175" required />
+                  <span class="unit">cm</span>
+                </div>
+                <p class="error" data-error-for="altura"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="atividade">Nível de atividade</label>
+              <select id="atividade" name="atividade" required>
+                <option value="1.2">Sedentário — trabalho sentado, pouco exercício</option>
+                <option value="1.375" selected>Levemente ativo — 1 a 3 treinos por semana</option>
+                <option value="1.55">Moderadamente ativo — 3 a 5 treinos por semana</option>
+                <option value="1.725">Muito ativo — 6 a 7 treinos por semana</option>
+                <option value="1.9">Atleta — treino diário intenso ou trabalho físico</option>
+              </select>
+              <p class="hint" id="atividade-hint">Multiplicador 1,375 aplicado sobre a TMB.</p>
+            </div>
+
+            <fieldset class="field">
+              <legend>Objetivo</legend>
+              <div class="segmented segmented-goal" role="radiogroup" aria-label="Objetivo">
+                <label><input type="radio" name="objetivo" value="emagrecer" /><span>Emagrecer<small>−500 kcal</small></span></label>
+                <label><input type="radio" name="objetivo" value="manter" checked /><span>Manter<small>TDEE</small></span></label>
+                <label><input type="radio" name="objetivo" value="ganhar" /><span>Ganhar massa<small>+300 kcal</small></span></label>
+              </div>
+            </fieldset>
+
+            <details class="advanced">
+              <summary>Ajustes avançados de macros</summary>
+              <div class="field-row">
+                <div class="field">
+                  <label for="proteina">Proteína</label>
+                  <div class="input-wrap">
+                    <input id="proteina" name="proteina" type="number" min="0.5" max="4" step="0.1" value="2" />
+                    <span class="unit">g/kg</span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="gordura">Gordura</label>
+                  <div class="input-wrap">
+                    <input id="gordura" name="gordura" type="number" min="0.3" max="2" step="0.1" value="0.8" />
+                    <span class="unit">g/kg</span>
+                  </div>
+                </div>
+              </div>
+              <p class="hint">Valores comuns: proteína 1,6–2,2 g/kg e gordura 0,6–1,0 g/kg.</p>
+            </details>
+
+            <button class="btn btn-primary btn-block" type="submit">
+              Calcular minhas calorias
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m0 0-4-4m4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="form-foot">Sem cadastro. Seus dados não saem deste navegador.</p>
+          </form>
+
+          <!-- RESULTADO -->
+          <div class="result-column">
+            <div id="result" class="card result-card is-empty" aria-live="polite">
+              <div class="result-empty">
+                <div class="empty-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3c1.2 3.2-.2 5-1.7 6.6-1.5 1.7-3.1 3.5-3.1 6.4A6.8 6.8 0 0 0 12 22a6.8 6.8 0 0 0 4.8-6c0-2-.9-3.5-2-4.8-.4 1.2-1 2-2 2.3.5-3.9-1.2-7.1-.8-10.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                </div>
+                <h3>Seu resultado aparece aqui</h3>
+                <p>Preencha os dados ao lado para ver calorias, macros e IMC.</p>
+              </div>
+
+              <div class="result-body" hidden>
+                <div class="result-head">
+                  <p class="result-kicker" id="result-kicker">Meta para manutenção</p>
+                  <p class="result-big"><span id="result-kcal">0</span><small>kcal / dia</small></p>
+                  <p class="result-sub" id="result-sub"></p>
+                </div>
+
+                <div class="stat-grid">
+                  <div class="stat">
+                    <span>TMB</span>
+                    <strong id="stat-tmb">—</strong>
+                    <small>taxa metabólica basal</small>
+                  </div>
+                  <div class="stat">
+                    <span>TDEE</span>
+                    <strong id="stat-tdee">—</strong>
+                    <small>gasto diário total</small>
+                  </div>
+                  <div class="stat">
+                    <span>Ajuste</span>
+                    <strong id="stat-ajuste">—</strong>
+                    <small id="stat-ajuste-label">em relação ao TDEE</small>
+                  </div>
+                </div>
+
+                <div class="macros">
+                  <div class="macros-head">
+                    <h3>Macros diários</h3>
+                    <span id="macro-kcal-total"></span>
+                  </div>
+                  <div class="macro" data-macro="prot">
+                    <div class="macro-top"><span>Proteína</span><strong id="macro-prot-g">—</strong></div>
+                    <div class="bar"><i id="bar-prot"></i></div>
+                    <p id="macro-prot-kcal"></p>
+                  </div>
+                  <div class="macro" data-macro="gord">
+                    <div class="macro-top"><span>Gordura</span><strong id="macro-gord-g">—</strong></div>
+                    <div class="bar"><i id="bar-gord"></i></div>
+                    <p id="macro-gord-kcal"></p>
+                  </div>
+                  <div class="macro" data-macro="carb">
+                    <div class="macro-top"><span>Carboidrato</span><strong id="macro-carb-g">—</strong></div>
+                    <div class="bar"><i id="bar-carb"></i></div>
+                    <p id="macro-carb-kcal"></p>
+                  </div>
+                </div>
+
+                <div class="mini-grid">
+                  <div class="mini"><span>IMC</span><strong id="stat-imc">—</strong><small id="stat-imc-label"></small></div>
+                  <div class="mini"><span>Água</span><strong id="stat-agua">—</strong><small>por dia, aproximado</small></div>
+                  <div class="mini"><span>Ritmo</span><strong id="stat-ritmo">—</strong><small id="stat-ritmo-label"></small></div>
+                </div>
+
+                <div id="alerts" class="alerts" aria-live="assertive"></div>
+
+                <div class="result-actions">
+                  <button type="button" class="btn btn-soft" id="btn-save">Salvar resultado</button>
+                  <button type="button" class="btn btn-soft" id="btn-share">Compartilhar</button>
+                  <button type="button" class="btn btn-soft" id="btn-print">Imprimir</button>
+                </div>
+                <p class="result-note">Estimativa educativa. Não substitui avaliação de nutricionista ou médico.</p>
+              </div>
+            </div>
+
+            <aside class="ad-slot ad-slot-tall" aria-label="Publicidade">
+              <span>Publicidade</span>
+            </aside>
+
+            <div class="pro-card">
+              <p class="pro-badge">Em breve · Plano Pro</p>
+              <h3>Vá além do número</h3>
+              <p>Histórico ilimitado, plano alimentar por refeição, exportação em PDF e acompanhamento de progresso.</p>
+              <button class="btn btn-dark btn-block" data-open-pro>Entrar na lista de espera</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- HISTÓRICO -->
+        <section class="history" id="historico" hidden>
+          <div class="history-head">
+            <h2>Seus últimos cálculos</h2>
+            <button type="button" class="btn btn-quiet btn-sm" id="btn-clear-history">Limpar</button>
+          </div>
+          <ul id="history-list" class="history-list"></ul>
+          <p class="hint" id="history-hint"></p>
+        </section>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="como-funciona" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Como o cálculo funciona</h2>
+          <p>Sem mágica: usamos equações validadas e mostramos cada etapa.</p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <span class="step-num">01</span>
+            <h3>TMB — taxa metabólica basal</h3>
+            <p>É a energia que seu corpo gasta em repouso. Usamos a equação de Mifflin-St Jeor, uma das mais precisas para a população geral.</p>
+            <code>10 × peso + 6,25 × altura − 5 × idade + ajuste</code>
+          </article>
+          <article class="step">
+            <span class="step-num">02</span>
+            <h3>TDEE — gasto diário total</h3>
+            <p>Aplicamos um fator de atividade sobre a TMB para estimar o quanto você gasta incluindo treinos, trabalho e deslocamentos.</p>
+            <code>TDEE = TMB × fator de atividade</code>
+          </article>
+          <article class="step">
+            <span class="step-num">03</span>
+            <h3>Meta e macros</h3>
+            <p>Somamos ou subtraímos calorias conforme o objetivo e distribuímos proteína e gordura por kg de peso. O carboidrato completa o restante.</p>
+            <code>Proteína 4 kcal/g · Gordura 9 kcal/g · Carbo 4 kcal/g</code>
+          </article>
+        </div>
+
+        <div class="notice">
+          <strong>Importante:</strong> TDEE é uma estimativa. O valor real varia com genética, sono, estresse e composição corporal.
+          Use o resultado como ponto de partida e ajuste após 2–3 semanas observando o peso.
+        </div>
+      </div>
+    </section>
+
+    <!-- DÚVIDAS -->
+    <section id="duvidas" class="section">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2>Perguntas frequentes</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>O que é TDEE?</summary>
+            <p>TDEE (<em>Total Daily Energy Expenditure</em>) é o total de calorias que você gasta por dia, somando metabolismo basal, digestão, exercícios e atividades cotidianas. Comer próximo ao TDEE mantém o peso; abaixo, tende a emagrecer; acima, a ganhar massa.</p>
+          </details>
+          <details>
+            <summary>Qual a diferença entre TMB e TDEE?</summary>
+            <p>A TMB é o gasto em repouso absoluto. O TDEE inclui tudo o que você faz além de ficar parado. Por isso o TDEE é sempre maior que a TMB.</p>
+          </details>
+          <details>
+            <summary>Devo comer exatamente as calorias calculadas?</summary>
+            <p>Não precisa ser exato. Uma margem de 100–200 kcal é normal. O importante é manter consistência por algumas semanas e ajustar conforme a resposta do corpo.</p>
+          </details>
+          <details>
+            <summary>Por que a proteína é calculada por kg de peso?</summary>
+            <p>Porque a necessidade proteica acompanha a massa corporal, não as calorias. Valores entre 1,6 e 2,2 g/kg costumam ser adequados para quem treina e quer preservar ou ganhar massa muscular.</p>
+          </details>
+          <details>
+            <summary>O resultado substitui um nutricionista?</summary>
+            <p>Não. A calculadora é uma ferramenta educativa. Condições de saúde, gestação, transtornos alimentares e objetivos específicos exigem acompanhamento profissional.</p>
+          </details>
+          <details>
+            <summary>Meus dados são salvos?</summary>
+            <p>Nada é enviado para servidores. O histórico fica apenas no <code>localStorage</code> do seu navegador e pode ser apagado a qualquer momento.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <div>
+            <h2>Pronto para começar com o número certo?</h2>
+            <p>Leva menos de um minuto e você pode salvar o resultado para comparar depois.</p>
+          </div>
+          <a class="btn btn-primary" href="#calculadora">Calcular minhas calorias</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a class="brand brand-footer" href="#top">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 3c1.6 4.3-.3 6.6-2.2 8.8-2 2.3-4.2 4.7-4.2 8.6C9.6 25.8 12.5 29 16 29s6.4-3.2 6.4-8.6c0-2.6-1.2-4.6-2.6-6.4-.5 1.6-1.4 2.6-2.6 3.1.6-5.2-1.6-9.6-1.2-14.1Z" fill="currentColor"/>
+          </svg>
+          <span>Caloria <strong>Certa</strong></span>
+        </a>
+        <p class="footer-note">Ferramenta educativa de estimativa calórica. Não é diagnóstico nem prescrição.</p>
+      </div>
+      <nav aria-label="Links do rodapé">
+        <a href="#calculadora">Calculadora</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#duvidas">Dúvidas</a>
+        <button class="link-button" data-open-pro>Plano Pro</button>
+      </nav>
+      <p class="copyright">© <span id="year">2026</span> Caloria Certa · Feito por João Marcos Almeida</p>
+    </div>
+  </footer>
+
+  <!-- MODAL PRO -->
+  <dialog id="pro-dialog" class="dialog" aria-labelledby="pro-title">
+    <form method="dialog" class="dialog-close-form">
+      <button class="dialog-close" aria-label="Fechar">×</button>
+    </form>
+    <p class="pro-badge">Plano Pro · lista de espera</p>
+    <h2 id="pro-title">Seja avisado quando o Pro abrir</h2>
+    <p>Receba acesso antecipado ao histórico ilimitado, plano alimentar e exportação em PDF.</p>
+    <form id="waitlist-form" class="waitlist-form">
+      <label for="waitlist-email">Seu e-mail</label>
+      <input id="waitlist-email" name="email" type="email" placeholder="voce@email.com" required autocomplete="email" />
+      <label for="waitlist-goal">Seu objetivo principal</label>
+      <select id="waitlist-goal" name="goal">
+        <option>Emagrecer</option>
+        <option>Ganhar massa muscular</option>
+        <option>Manter o peso</option>
+        <option>Melhorar performance</option>
+      </select>
+      <button class="btn btn-primary btn-block" type="submit">Quero entrar na lista</button>
+      <p class="hint">Sem spam. Você pode sair quando quiser.</p>
+    </form>
+    <p class="waitlist-success" hidden>Pronto! Seu interesse foi registrado neste dispositivo. 🎉</p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
